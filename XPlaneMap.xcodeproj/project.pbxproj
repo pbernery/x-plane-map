@@ -13,6 +13,12 @@
 		82B6115E1F5347740088AC6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82B6115D1F5347740088AC6B /* Assets.xcassets */; };
 		82B611611F5347740088AC6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82B6115F1F5347740088AC6B /* LaunchScreen.storyboard */; };
 		82B6116C1F5347740088AC6B /* XPlaneMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6116B1F5347740088AC6B /* XPlaneMapTests.swift */; };
+		82B611771F534DE60088AC6B /* XPlaneListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B611761F534DE60088AC6B /* XPlaneListener.swift */; };
+		82B611791F540F880088AC6B /* BoradcastUDPSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B611781F540F880088AC6B /* BoradcastUDPSocket.swift */; };
+		82B6117F1F542FFE0088AC6B /* XGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6117E1F542FFE0088AC6B /* XGPS.swift */; };
+		82B611811F5430130088AC6B /* XPlaneMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B611801F5430130088AC6B /* XPlaneMessage.swift */; };
+		82B611841F54304A0088AC6B /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B611831F54304A0088AC6B /* StringExtensions.swift */; };
+		82B611861F5431850088AC6B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B611851F5431850088AC6B /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,12 @@
 		82B611671F5347740088AC6B /* XPlaneMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XPlaneMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82B6116B1F5347740088AC6B /* XPlaneMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPlaneMapTests.swift; sourceTree = "<group>"; };
 		82B6116D1F5347740088AC6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82B611761F534DE60088AC6B /* XPlaneListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPlaneListener.swift; sourceTree = "<group>"; };
+		82B611781F540F880088AC6B /* BoradcastUDPSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoradcastUDPSocket.swift; sourceTree = "<group>"; };
+		82B6117E1F542FFE0088AC6B /* XGPS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGPS.swift; sourceTree = "<group>"; };
+		82B611801F5430130088AC6B /* XPlaneMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPlaneMessage.swift; sourceTree = "<group>"; };
+		82B611831F54304A0088AC6B /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		82B611851F5431850088AC6B /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +89,8 @@
 		82B611551F5347740088AC6B /* XPlaneMap */ = {
 			isa = PBXGroup;
 			children = (
+				82B6117D1F542FF20088AC6B /* Utils */,
+				82B6117C1F542FEA0088AC6B /* XPlane */,
 				82B611561F5347740088AC6B /* AppDelegate.swift */,
 				82B611581F5347740088AC6B /* ViewController.swift */,
 				82B6115A1F5347740088AC6B /* Main.storyboard */,
@@ -94,6 +108,34 @@
 				82B6116D1F5347740088AC6B /* Info.plist */,
 			);
 			path = XPlaneMapTests;
+			sourceTree = "<group>";
+		};
+		82B6117C1F542FEA0088AC6B /* XPlane */ = {
+			isa = PBXGroup;
+			children = (
+				82B611821F54301D0088AC6B /* Messages */,
+				82B611761F534DE60088AC6B /* XPlaneListener.swift */,
+			);
+			name = XPlane;
+			sourceTree = "<group>";
+		};
+		82B6117D1F542FF20088AC6B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				82B611781F540F880088AC6B /* BoradcastUDPSocket.swift */,
+				82B611831F54304A0088AC6B /* StringExtensions.swift */,
+				82B611851F5431850088AC6B /* Logger.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		82B611821F54301D0088AC6B /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				82B611801F5430130088AC6B /* XPlaneMessage.swift */,
+				82B6117E1F542FFE0088AC6B /* XGPS.swift */,
+			);
+			name = Messages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,7 +243,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82B611841F54304A0088AC6B /* StringExtensions.swift in Sources */,
+				82B611791F540F880088AC6B /* BoradcastUDPSocket.swift in Sources */,
 				82B611591F5347740088AC6B /* ViewController.swift in Sources */,
+				82B611861F5431850088AC6B /* Logger.swift in Sources */,
+				82B6117F1F542FFE0088AC6B /* XGPS.swift in Sources */,
+				82B611771F534DE60088AC6B /* XPlaneListener.swift in Sources */,
+				82B611811F5430130088AC6B /* XPlaneMessage.swift in Sources */,
 				82B611571F5347740088AC6B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +462,7 @@
 				82B611721F5347740088AC6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		82B611731F5347740088AC6B /* Build configuration list for PBXNativeTarget "XPlaneMapTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +471,7 @@
 				82B611751F5347740088AC6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
